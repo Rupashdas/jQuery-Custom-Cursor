@@ -27,7 +27,7 @@ A lightweight and customizable jQuery plugin that replaces the default mouse cur
 ### 3. Add your custom cursor image
 Place your cursor image (e.g., cursor.png) in a directory like images/.
 
-##🧪 Usage
+## 🧪 Usage
 
 ```html
 <script>
