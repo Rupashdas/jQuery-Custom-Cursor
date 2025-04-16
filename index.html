@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>jQuery Custom Cursor Plugin Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      cursor: none; /* hide default cursor */
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #6C63FF;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    section.features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+
+    .feature {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🖱️ jQuery Custom Cursor Plugin</h1>
+    <p>Enhance your site with a fully customizable cursor</p>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🎨 Custom Image</h3>
+      <p>Use any image as your mouse cursor with full control over size and position.</p>
+    </div>
+    <div class="feature">
+      <h3>⚙️ Configurable</h3>
+      <p>Offset, size, z-index, exclusions – everything is tweakable via options.</p>
+    </div>
+    <div class="feature">
+      <h3>📵 Touch Detection</h3>
+      <p>Automatically disables itself on touch devices to avoid conflicts.</p>
+    </div>
+    <div class="feature">
+      <h3>🔧 jQuery Friendly</h3>
+      <p>Lightweight and super easy to integrate with your existing jQuery setup.</p>
+    </div>
+  </section>
+
+  <footer>
+    Made with 💜 by You — MIT Licensed
+  </footer>
+
+  <!-- jQuery + Plugin -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="jquery-custom-cursor.js"></script>
+
+  <!-- Plugin Init -->
+  <script>
+    $(function () {
+      $('body').customCursor({
+        imageUrl: './images/cursor.png',
+        width: 50,
+        height: 50,
+        offsetX: 'auto',
+        offsetY: 'auto',
+        zIndex: 999999,
+        cursorId: 'custom-cursor',
+        excludeSelector: 'a, button'
+      });
+    });
+  </script>
+
+</body>
+</html>
